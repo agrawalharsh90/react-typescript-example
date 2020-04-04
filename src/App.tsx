@@ -1,23 +1,23 @@
 import React from "react";
-import { Counter } from "./Counter";
+import {Counter} from "./Counter";
 
-// props
-// hooks
-// render props
+interface GlobalProps {
 
-const App: React.FC = () => {
-  return (
-    <div>
-      <Counter>
-        {({ count, setCount }) => (
-          <div>
-            {count}
-            <button onClick={() => setCount(count + 1)}>+</button>
-          </div>
-        )}
-      </Counter>
-    </div>
-  );
+}
+
+const App: React.FC<GlobalProps> = (props: GlobalProps) => {
+    return (
+        <div>
+            <Counter>
+                {({count, setCount}) => (
+                    <div>
+                        {count}
+                        <button onClick={() => setCount(count + 1)}>+</button>
+                    </div>
+                )}
+            </Counter>
+        </div>
+    );
 };
 
 export default App;
